@@ -16,6 +16,10 @@ const crearDeck = () => {
             deck.push(esp + tipo);
         }
     }
+
+    console.log(deck);
+    deck = _.shuffle(deck);
+    return deck;
 }
 
 crearDeck();
