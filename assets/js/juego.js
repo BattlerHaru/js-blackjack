@@ -27,17 +27,30 @@ crearDeck();
 console.log(deck);
 
 const pedirCarta = () => {
-    if (deck.length === 0) {
-        throw 'No hay cartas en el deck'
+        if (deck.length === 0) {
+            throw 'No hay cartas en el deck'
+        }
+
+        const carta = deck.pop();
+
+        return carta;
+
+    }
+    //pedirCarta();
+
+const valorCarta = (carta) => {
+    const valor = carta.substring(0, carta.length - 1);
+    let puntos = 0;
+
+    if (isNaN(valor)) {
+        puntos = (valor === 'A') ? 11 : 10;
+        console.log('no es un numero');
+    } else {
+        console.log('es un numero');
+        puntos = valor * 1;
     }
 
-    const carta = deck.pop();
-
-    console.log(carta);
-
-    return carta;
-
+    console.log(puntos);
 }
-pedirCarta();
 
-console.log(deck);
+valorCarta('AD');
