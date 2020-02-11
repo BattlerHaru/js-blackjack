@@ -4,6 +4,7 @@ const especiales = ['A', 'J', 'Q', 'K'];
 
 const btnPedir = document.querySelector('#btnPedir');
 const btnDetener = document.querySelector('#btnDetener');
+const btnNuevo = document.querySelector('#btnNuevo');
 
 const divCartasJugador = document.querySelector('#jugador-cartas');
 const divCartasComputadora = document.querySelector('#computadora-cartas');
@@ -108,4 +109,24 @@ btnDetener.addEventListener('click', () => {
     btnPedir.disabled = 'true';
     btnDetener.disabled = 'true';
     turnoComputadora(puntosJugador);
+});
+
+btnNuevo.addEventListener('click', () => {
+    console.clear();
+
+    deck = [];
+    deck = crearDeck();
+
+    puntosComputadora = 0;
+    puntosJugador = 0;
+
+    puntosHTML[0].innerText = 0;
+    puntosHTML[1].innerText = 0;
+
+    divCartasComputadora.innerHTML = '';
+    divCartasJugador.innerHTML = '';
+
+    btnPedir.disabled = false;
+    btnDetener.disabled = false;
+
 });
