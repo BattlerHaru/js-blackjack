@@ -1,4 +1,4 @@
-(() => {
+const miModulo = (() => {
     'use strict'
 
     let deck = [];
@@ -96,6 +96,8 @@
                 console.warn('Buuuu Perdiste');
             } else if (puntosComputadora > 21) {
                 console.log('%c Ganaste!!', 'background: #ce910e; color: white;');
+            } else if (puntosMinimos === 21) {
+                console.log('%c Ganaste!!', 'background: #ce910e; color: white;');
             } else {
                 console.warn('Computadora Gana');
                 console.warn('Buuuu Perdiste');
@@ -146,4 +148,7 @@
         inicializarJuego();
     });
 
+    return {
+        nuevoJuego: inicializarJuego
+    };
 })();
